@@ -1,11 +1,6 @@
-import express from 'express';
-import routes from './routes';
-
+import app from './app';
+import 'reflect-metadata';
 import './database';
-
-const app = express();
-
-app.use(routes);
 
 app.listen(3333, () => {
   console.log('Start Server On Development');

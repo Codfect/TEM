@@ -13,8 +13,8 @@ export default class Class {
   @Column()
   doctor: string;
 
-  @Column('times')
-  date: Date;
+  @Column()
+  date: string;
 }
 
 /*

@@ -1,7 +1,8 @@
 import { Router } from 'express';
+import classRouter from './class.routes';
 
 const routes = Router();
 
-routes.get('/', (request, response) => response.json({ checkMessage: 'Hello Server' }));
+routes.use('/class', classRouter);
 
 export default routes;
