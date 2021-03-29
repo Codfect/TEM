@@ -4,5 +4,19 @@
   "port": 5432,
   "username": "postgres",
   "password": "docker",
-  "database": "tem"
+  "database": "tem",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "src/entity/**/*.ts"
+  ],
+  "migrations": [
+    "src/migrations/**/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": [
+      "src/migrations/"
+    ],
+    "entitiesDir": "src/models"
+  }
 }
