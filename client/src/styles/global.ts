@@ -28,6 +28,11 @@ export const GlobalStyle = createGlobalStyle `
     -webkit-font-smoothing: antialiased;
   }
 
+  body, input, textarea, button {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+  }
+
   button {
     cursor: pointer;
   }
