@@ -1,71 +1,45 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { Container } from './styles';
 
+import { api } from '../../services/api';
+import { useEffect, useState } from 'react';
+
+interface Listing {
+  id: number;
+  name: string;
+  doctor: string;
+  date: string;
+}
+
 export function Appointment() {
+  const [listing, setListing] = useState<Listing[]>([]);
+
+  useEffect(() => {
+    api.get('/class')
+      .then(response => {
+    setListing(response.data);
+    })
+  }, []);
+
   return(
     <Container>
       <ul>
-        <li>
-          <strong>NOME</strong>
-          <p>Nome teste</p>
+        {listing.map(listing => (
+          <li key={listing.id}>
+            <strong>NOME</strong>
+            <p>{listing.name}</p>
 
-          <strong>DOUTOR</strong>
-          <p>Nome do Doutor</p>
+            <strong>DOUTOR</strong>
+            <p>{listing.doctor}</p>
 
-          <strong>DATA</strong>
-          <p>07/07/2077</p>
+            <strong>DATA</strong>
+            <p>{listing.date}</p>
 
-          <button type="button">
-            <AiOutlineCloseCircle size={20} color="red" />
-          </button>
-        </li>
-
-
-        <li>
-          <strong>NOME</strong>
-          <p>Nome teste</p>
-
-          <strong>DOUTOR</strong>
-          <p>Julius Winfield Erving II</p>
-
-          <strong>DATA</strong>
-          <p>07/07/2077</p>
-
-          <button type="button">
-            <AiOutlineCloseCircle size={20} color="red" />
-          </button>
-        </li>
-
-
-        <li>
-          <strong>NOME</strong>
-          <p>Nome teste</p>
-
-          <strong>DOUTOR</strong>
-          <p>Julius Winfield Erving II</p>
-
-          <strong>DATA</strong>
-          <p>07/07/2077</p>
-
-          <button type="button">
-            <AiOutlineCloseCircle size={20} color="red" />
-          </button>
-        </li>
-
-        <li>
-          <strong>NOME</strong>
-          <p>Nome teste</p>
-
-          <strong>DOUTOR</strong>
-          <p>Julius Winfield Erving II</p>
-
-          <strong>DATA</strong>
-          <p>07/07/2077</p>
-
-          <button type="button">
-            <AiOutlineCloseCircle size={20} color="red" />
-          </button>
-        </li>
+            <button type="button">
+              <AiOutlineCloseCircle size={20} color="red" />
+            </button>
+          </li>
+        ))}
       </ul>
     </Container>
   );
