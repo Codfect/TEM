@@ -18,16 +18,16 @@ export const Content = styled.div`
   button {
     font-size: 1rem;
     color: #fff;
-    background: #FFA9CB; 
+    background: #FFA9CB;
     border: 0;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 0.25rem;
     font-weight: 500;
-
-    transition: filter 0.2s;
+    transition: 0.3s;
 
     &:hover {
-      filter: brightness(0.93);
+      background: #FCC8D6;
+      border-radius: 0.50rem; 
     }
   }
 `;

@@ -1,4 +1,5 @@
 import logoPng from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 import { Container, Content } from "./styles";
 
 export function Header () {
@@ -6,9 +7,11 @@ export function Header () {
     <Container>
       <Content>
         <img src={logoPng} alt=""/>
-        <button type="button">
-          Agendar
-        </button>
+        <Link to="/agendar">
+          <button type="button">
+            Agendar
+          </button>
+        </Link>
       </Content>
     </Container>
   );
