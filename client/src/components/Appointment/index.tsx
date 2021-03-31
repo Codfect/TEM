@@ -13,13 +13,25 @@ interface Listing {
 
 export function Appointment() {
   const [listing, setListing] = useState<Listing[]>([]);
-
+// GET
   useEffect(() => {
     api.get('/class')
       .then(response => {
     setListing(response.data);
     })
   }, []);
+
+
+// DELETE
+async function handleDelete(id: number) {
+  try {
+    await api.delete(`/class/${id}`)
+
+    setListing(listing.filter(listing => listing.id !== id));
+  } catch (err) {
+    alert(err);
+  }
+}
 
   return(
     <Container>
@@ -35,7 +47,7 @@ export function Appointment() {
             <strong>DATA</strong>
             <p>{listing.date}</p>
 
-            <button type="button">
+            <button onClick={() => handleDelete(listing.id)} type="button">
               <AiOutlineCloseCircle size={20} color="red" />
             </button>
           </li>

@@ -11,9 +11,10 @@ export function RegisterForm() {
   const [doctor, setDoctor] = useState('');
   const [date, setDate] = useState('');
 
+
+  // POST
   async function handleRegister(event: FormEvent) {
     event.preventDefault();
-
     const result = {
       name,
       doctor,
@@ -26,6 +27,7 @@ export function RegisterForm() {
     }
   }
 
+// Formulario
   return(
     <Container>
       <Content onSubmit={handleRegister}>
