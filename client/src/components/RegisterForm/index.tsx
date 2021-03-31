@@ -1,9 +1,17 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 export function RegisterForm() {
   return(
     <Container>
-      <h2>Novo Agendamento</h2>
+      <Content>
+        <h2>Novo Agendamento</h2>
+        <input placeholder="Nome"/>
+        <input placeholder="Doutor"/>
+        <input type="calendar" placeholder="Data" />
+        <button type="button">
+          Salvar
+        </button>
+      </Content>
     </Container>
   );
 }
