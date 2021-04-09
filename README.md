@@ -2,12 +2,13 @@
 ``` $ yarn ```
 
 
+## Run development
+
 ### Back-end
 ``` $ cd server ```   
 
 ``` $ yarn dev ```    
 
-## Run development
 ### Front-end 
 ``` $ cd client ```   
 
